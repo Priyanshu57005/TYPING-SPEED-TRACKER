@@ -1,0 +1,39 @@
+body {
+    background: url('pngbgi.jpg') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+}
+
+.result-box{
+    max-width: 500px;
+    margin: 100px auto;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(15, 3, 82, 1.1);
+}
+
+.result-box h1{
+    margin-bottom: 20px;
+}
+
+.score{
+    font-size: 24px;
+    margin: 15px 0;
+}
+
+button{
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    background-color: #007bff;
+    color: white;
+}
+
+button:hover {
+    background-color: #1863b3;
+}

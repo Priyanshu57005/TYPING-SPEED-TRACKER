@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Test - Let's Test Your WPM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="navlogo">
+            <div class="logo"></div>   
+        </div>
+        <h1>Typing Test - Let's Test Your WPM</h1>  
+    </div>
+    </div>
+
+<div class="main">
+    <h4>TYPING SPEED TEST</h4>
+    <h1>Test Your Typing Skills</h1>
+
+    <div class="stats-container">
+        <div class="time_box">
+            <h2 id="time">60</h2>
+            <p>seconds</p>
+        </div>
+        <div class="start_box">
+            <h2 id="wpm">0</h2>
+            <p>words/min</p>
+        </div>
+        <div class="start_box">
+            <h2 id="cpm">0</h2>
+            <p>char/min</p>
+        </div>
+        <div class="start_box">
+            <h2 id="accuracy">0</h2>
+            <p>%accuracy</p>
+        </div>
+    </div>
+
+    <div class="typing-box">
+        <p id="textToType">Loading text.......</p>
+        <textarea id="input" placeholder="Start Typing..."></textarea>
+    </div>
+    <button onclick="loadNewText()">Try other Attempt</button>
+
+</div>
+
+
+    <footer>
+    <p>&copy; 2025 Typing Test - Let's Test Your WPM | Typing texts sourced from public domain or used under license.</p>
+    </footer>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
