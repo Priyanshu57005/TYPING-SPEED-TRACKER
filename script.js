@@ -24,7 +24,7 @@ async function loadNewText() {
         cpmDisplay.innerHTML = 0;
         accuracyDisplay.innerHTML = 0;
         started = false;
-        input.disabled = false;
+        disabled = false;
         clearInterval(interval);
     }
     catch (err){
@@ -40,7 +40,7 @@ function startTimer(){
         timeDisplay.innerHTML = timer;
         if(timer === 0){
             clearInterval(interval)
-            input.dasable = true;
+            input.dasabled = true;
             calculateFinalScore();
         }
     }, 1000);
@@ -53,15 +53,14 @@ input.addEventListener('input', () => {
         started = true;
     }
 
-    const typedText = input.value;
+     const typedText = input.value;
     const charsTyped = typedText.length;
-    const correctChars = typedText.spilt('').filter((ch, i) => ch === originalText[i]).length;
+    const correctChars = typedText.split('').filter((ch, i) => ch === originalText[i]).length;
+    const wordsTyped = typedText.trim().split(/\s+/).length;
 
-    const wordsTyped = typedText.trim().spilt(/\s+/).length;
-
-    const accuracy = Math.round((correctChars / charsTyped)* 100) || 0;
-    const cpm = correctChars;
-    const wpm = Math.round((correctChars/5))
+    const accuracy = Math.round((correctChars / charsTyped) * 100) || 0;
+    const cpm = Math.round(correctChars / minutes);
+    const wpm = Math.round((correctChars / 5) / minutes);
 
     accuracyDisplay.innerText = accuracy;
     cpmDisplay.innerText = cpm;
@@ -69,7 +68,18 @@ input.addEventListener('input', () => {
 });
 
 function calculateFinalScore(){
-    input.style.border = "2px solid #aaa";
+    const typedText = input.value;
+    const charsTyped = typedText.length;
+    const correctChars = typedText.split('').filter((ch, i) => ch === originalText[i]).length;
+    const wpm = Math.round((correctChars / 5));
+    const cpm = correctChars;
+    const accuracy = Math.round((correctChars / charsTyped) * 100) || 0;
+
+    localStorage.setItem("wpm", wpm);
+    localStorage.setItem("cpm", cpm);
+    localStorage.setItem("accuracy", accuracy);
+
+    window.location.href = "result.html";
 }
 
 window.onload = loadNewText;
